@@ -55,11 +55,12 @@ class Coach(Person):
         if isinstance(member, Member)==False:
             print("Cannot mentor non-members.")
         else:
-            self.mentees.append(member.name)
+            self.mentees.append(member)
             print(self.name + " is now mentoring Member " + member.name + " in " + member.sport)
         
     def get_mentees(self):
-        print(self.mentees)
+        for member in self.mentees:
+            print(member.name + " ("+member.sport+")")
     
     def increase_salary(self, percentage):
         self.salary = self.salary * (1+(percentage/100))
@@ -111,6 +112,7 @@ gymTeach = Coach("Jim", 65, 1231231, "C13231", "Basketball", 100)
 staff = Staff("Steph", 40, 2131, "S23423", "Teacher", 10)
 
 coach.assign_mentee(alex)
+coach.assign_mentee(katie)
 katie.add_performance_score(10)
 katie.add_performance_score(20)
 katie.add_performance_score(30)
