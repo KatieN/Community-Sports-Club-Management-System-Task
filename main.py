@@ -18,7 +18,7 @@ class Member(Person):
         self.membership_id = membership_id
         self.sport = sport
         self.performance_scores = []
-        self.average = "Not Calculated"
+        self.average = 0
     
     def set_member_details(self, membership_id, sport):
         self.membership_id = membership_id
